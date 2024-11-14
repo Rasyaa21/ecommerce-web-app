@@ -1,49 +1,4 @@
 <div class="header section">
-    <!-- Header Top Message Start -->
-    <div class="bg-black header-top section-fluid">
-        <div class="container">
-            <div class="row row-cols-lg-2 align-items-center">
-                <!-- Header Top Message Start -->
-                <div class="text-center col text-lg-start">
-                    <div class="header-top-massege">
-                        <p>Default Welcome Message </p>
-                    </div>
-                </div>
-                <!-- Header Top Message End -->
-                <!-- Header Top Language Currency -->
-                <div class="col d-none d-lg-block">
-                    <div class="header-top-set-lan-curr d-flex justify-content-end">
-                        <!-- Single Wedge Start -->
-                        <div class="header-top-curr dropdown">
-                            <button class="dropdown-toggle" data-bs-toggle="dropdown"> Language : (ENG) <i
-                                    class="ion-ios-arrow-down"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a class="dropdown-item" href="#">English</a></li>
-                                <li><a class="dropdown-item" href="#">Italiano</a></li>
-                                <li><a class="dropdown-item" href="#">Français</a></li>
-                                <li><a class="dropdown-item" href="#">Filipino</a></li>
-                            </ul>
-                        </div>
-                        <!-- Single Wedge End -->
-                        <!-- Single Wedge Start -->
-                        <div class="header-top-curr dropdown">
-                            <button class="pr-0 border-0 dropdown-toggle" data-bs-toggle="dropdown">Currency : (USD)
-                                <i class="ion-ios-arrow-down"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a class="dropdown-item" href="#">USD $</a></li>
-                                <li><a class="dropdown-item" href="#">EUR €</a></li>
-                                <li><a class="dropdown-item" href="#">POUND £</a></li>
-                                <li><a class="dropdown-item" href="#">FRANC ₣</a></li>
-                            </ul>
-                        </div>
-                        <!-- Single Wedge End -->
-                    </div>
-                </div>
-                <!-- Header Top Language Currency -->
-            </div>
-        </div>
-    </div>
-    <!-- Header Top  End -->
     <!-- Header Bottom  Start -->
     <div class="header-bottom d-none d-lg-block">
         <div class="container position-relative">
