@@ -40,4 +40,14 @@ class Product extends Model
     {
         return $this->hasMany(TransactionDetail::class);
     }
+
+    /**
+     * Get all of the banners for the Product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function banners()
+    {
+        return $this->hasMany(Banner::class);
+    }
 }
