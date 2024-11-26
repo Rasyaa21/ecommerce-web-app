@@ -1,12 +1,12 @@
 <div class="header section">
-    <!-- Header Bottom  Start -->
+    <!--   Bottom  Start -->
     <div class="header-bottom d-none d-lg-block">
         <div class="container position-relative">
             <div class="row align-self-center">
                 <!-- Header Logo Start -->
                 <div class="col-auto align-self-center">
                     <div class="header-logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
+                        <a href="{{ route('home') }}"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
                     </div>
                 </div>
                 <!-- Header Logo End -->
@@ -108,13 +108,8 @@
                 <div class="col-md-12 align-self-center">
                     <div class="main-menu">
                         <ul>
-                            <li class="dropdown"><a href="#">Home <i class="ion-ios-arrow-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li><a href="index.html">Home 1</a></li>
-                                    <li><a href="index-2.html">Home 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="about.html">About us</a></li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="{{ route('about') }}">About us</a></li>
                             <li class="dropdown position-static"><a href="#">Shop <i
                                         class="ion-ios-arrow-down"></i></a>
                                 <ul class="mega-menu d-block">

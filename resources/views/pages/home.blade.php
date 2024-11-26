@@ -37,4 +37,22 @@
         </div>
     </div>
     <!-- Hero/Intro Slider End -->
+    <div class="section pt-100px pb-100px">
+        <div class="container">
+            <div class="category-slider swiper-container" data-aos="fade-up">
+                <div class="category-wrapper swiper-wrapper">
+                    @foreach ($categories as $category)
+                        <div class=" swiper-slide">
+                            <a href="shop-left-sidebar.html" class="category-inner ">
+                                <div class="category-single-item">
+                                    <img src="{{ asset('storage/' . $category->image) }}" alt="">
+                                    <span class="title">{{ $category->name }}</span>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
