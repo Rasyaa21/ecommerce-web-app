@@ -49,7 +49,7 @@ class BannerResource extends Resource
                 Tables\Columns\TextColumn::make('product.name'),
             ])
             ->filters([
-                //
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

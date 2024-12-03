@@ -11,6 +11,5 @@ class ProductCategoryRepository implements ProductCategoryRepositoryInterface{
         return ProductCategory::all();
     }
 
-
-
+    
 }
