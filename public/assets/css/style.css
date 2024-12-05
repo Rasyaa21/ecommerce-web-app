@@ -6204,7 +6204,7 @@ body.offcanvas-open {
 }
 
 /*===================================
-    - Breadvrumb  
+    - Breadvrumb
 =================================*/
 .breadcrumb-area {
   background-color: #f4f5f7;
@@ -6295,4 +6295,8 @@ body.offcanvas-open {
 }
 .page-pagination li a:hover {
   color: #ff7004;
+}
+
+.selected {
+    color: #ff7004 !important;
 }

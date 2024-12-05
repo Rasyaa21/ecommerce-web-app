@@ -43,7 +43,7 @@
                 <div class="category-wrapper swiper-wrapper">
                     @foreach ($categories as $category)
                         <div class=" swiper-slide">
-                            <a href="shop-left-sidebar.html" class="category-inner ">
+                            <a href="{{ route('product.index', ['category' => $category->name]) }}" class="category-inner ">
                                 <div class="category-single-item">
                                     <img src="{{ asset('storage/' . $category->image) }}" alt="">
                                     <span class="title">{{ $category->name }}</span>
