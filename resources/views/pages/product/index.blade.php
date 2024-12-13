@@ -63,7 +63,7 @@
                             <!-- Single Prodect -->
                             <div class="product mb-25px">
                                 <div class="thumb">
-                                    <a href="shop-left-sidebar.html" class="image">
+                                    <a href="{{ route('product.show', $product->slug) }}" class="image">
                                         <img src="{{ asset('storage/' . $product->images->where('is_thumbnail', true)->first()->image) }}" alt="Product" />
                                         <img class="hover-image" src="{{ asset('storage/' . $product->images->where('is_thumbnail', true)->first()->image) }}" alt="Product" />
                                     </a>

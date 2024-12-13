@@ -28,4 +28,9 @@ class ProductRepository implements ProductRepositoryInterface{
         }
         return Product::all();
     }
+
+    public function getProductBySlug(string $slug){
+        return Product::where('slug', $slug)->first();
+    }
+
 }

@@ -10,6 +10,8 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
+use Filament\Forms\Set;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -28,12 +30,15 @@ class ProductResource extends Resource
                     ->relationship('productCategory', 'name')
                     ->required(),
                 Forms\Components\TextInput::make('name')
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
                     ->required(),
-                Forms\Components\RichEditor::make('description')
-                    ->columnSpanFull()
+                Forms\Components\TextInput::make('slug')
                     ->required(),
                 Forms\Components\TextInput::make('price')
                     ->integer()
+                    ->required(),
+                Forms\Components\RichEditor::make('description')
                     ->columnSpanFull()
                     ->required(),
                 Forms\Components\Toggle::make('is_new')

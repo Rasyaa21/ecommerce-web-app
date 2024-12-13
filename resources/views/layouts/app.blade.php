@@ -36,7 +36,7 @@
     </script>
 
     <!-- vendor css (Bootstrap & Icon Font) -->
-        <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
+        <link rel="stylesheet" href="{{  asset('assets/css/vendor/bootstrap.min.css')  }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/vendor/simple-line-icons.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/vendor/ionicons.min.css') }}" />
 
@@ -54,7 +54,7 @@
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
 
     <!-- Main Style -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css')  }}" />
 
 </head>
 

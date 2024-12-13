@@ -26,4 +26,11 @@ class ProductController extends Controller
 
         return view('pages.product.index', compact('products', 'categories'));
     }
+
+
+    public function show(string $slug){
+        $product = $this->productRepo->getProductBySlug($slug);
+
+        return view('pages.product.show', compact('product'));
+    }
 }
