@@ -24,17 +24,6 @@
                                 </form>
                             </div>
                         </div>
-                        <!-- Single Wedge Start -->
-                        <div class="header-bottom-set dropdown">
-                            <button class="dropdown-toggle header-action-btn" data-bs-toggle="dropdown"><i
-                                    class="icon-user"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a class="dropdown-item" href="my-account.html">My account</a></li>
-                                <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
-                                <li><a class="dropdown-item" href="login.html">Sign in</a></li>
-                            </ul>
-                        </div>
-                        <!-- Single Wedge End -->
                         <a href="#offcanvas-cart" class="pr-0 header-action-btn header-action-btn-cart offcanvas-toggle">
                             <i class="icon-handbag"></i>
                             <span class="header-action-num">01</span>
@@ -75,17 +64,6 @@
                                 </form>
                             </div>
                         </div>
-                        <!-- Single Wedge Start -->
-                        <div class="header-bottom-set dropdown">
-                            <button class="dropdown-toggle header-action-btn" data-bs-toggle="dropdown"><i
-                                    class="icon-user"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a class="dropdown-item" href="my-account.html">My account</a></li>
-                                <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
-                                <li><a class="dropdown-item" href="login.html">Sign in</a></li>
-                            </ul>
-                        </div>
-                        <!-- Single Wedge End -->
                         <a href="#offcanvas-cart" class="pr-0 header-action-btn header-action-btn-cart offcanvas-toggle">
                             <i class="icon-handbag"></i>
                             <span class="header-action-num">01</span>
@@ -111,6 +89,7 @@
                             <li class="{{ request()->routeIs('home') ? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
                             <li class="{{ request()->routeIs('about') ? 'active' : '' }}"><a href="{{ route('about') }}">About us</a></li>
                             <li class="{{ request()->routeIs('product.index') ? 'active' : '' }}"><a href="{{ route('product.index') }}">Shop</a></li>
+                            <li class="{{ request()->routeIs('contact') ? 'active' : '' }}"><a href="{{ route('contact') }}">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>

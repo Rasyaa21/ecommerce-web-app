@@ -33,4 +33,9 @@ class ProductRepository implements ProductRepositoryInterface{
         return Product::where('slug', $slug)->first();
     }
 
+    public function getAllPopularProducts()
+    {
+        return Product::where('is_popular', true)->get();
+    }
+
 }

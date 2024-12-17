@@ -76,6 +76,8 @@
     <!-- yield berfungsi untuk slot dari konten yang akan ditampilkan -->
     @yield('content')
 
+    @include('includes.footer')
+
     <!-- Global Vendor, plugins JS -->
 
     <!-- Vendor JS -->
