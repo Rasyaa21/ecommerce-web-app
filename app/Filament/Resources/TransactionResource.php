@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\TransactionResource\Pages;
 use App\Filament\Resources\TransactionResource\RelationManagers;
 use App\Models\Transaction;
+use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Illuminate\Support\Str;
@@ -30,6 +31,19 @@ class TransactionResource extends Resource
                     ->default(function (){
                         return 'TRXD-'. strtoupper(Str::random(6)) ;
                     }),
+                Forms\Components\Select::make('product_id')
+                    ->relationship('product', 'name')
+                    ->required()
+                    ->reactive()
+                    ->afterStateUpdated(
+                        function(callable $set, $state){
+                            $product = Product::where('id', $state)->first();
+                            if ($product){
+                                $price = $product->price;
+                                $set('sub_total', $price);
+                                $set('grand_total', $price);
+                            }
+                    }),
                 Forms\Components\TextInput::make("name")
                     ->required(),
                 Forms\Components\TextInput::make("email")
@@ -39,23 +53,19 @@ class TransactionResource extends Resource
                 Forms\Components\TextInput::make("address")
                     ->required(),
                 Forms\Components\Select::make("promo_code_id")
-                    ->relationship('promo', 'code'),
-                Forms\Components\Repeater::make("details")
-                    ->relationship('details')
-                    ->schema([
-                        Forms\Components\Select::make('product_id')
-                            ->relationship('product', 'name'),
-                        Forms\Components\TextInput::make('quantity')
-                            ->numeric()
-                            ->minValue(0)
-                            ->required()
-                    ])->columnSpanFull(),
+                    ->relationship('promoCode', 'code'),
                 Forms\Components\TextInput::make("sub_total")
-                    ->disabled()
+                    ->readOnly()
                     ->required(),
                 Forms\Components\TextInput::make("grand_total")
-                    ->disabled()
+                    ->readOnly()
+                    ->required(),
+                Forms\Components\Select::make('payment_status')
                     ->required()
+                    ->options([
+                        'unpaid' => 'belum dibayar',
+                        'paid' => 'sudah dibayar'
+                    ]),
             ]);
     }
 
@@ -63,13 +73,22 @@ class TransactionResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('product.name'),
+                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('email'),
+                Tables\Columns\TextColumn::make('phone'),
+                Tables\Columns\TextColumn::make('address'),
+                Tables\Columns\TextColumn::make('grand_total'),
+                Tables\Columns\TextColumn::make('payment_status'),
+
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

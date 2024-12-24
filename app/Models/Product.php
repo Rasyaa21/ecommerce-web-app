@@ -31,17 +31,6 @@ class Product extends Model
         //1 produk dapat memiliki banyak image
         return $this->hasMany(ProductImage::class);
     }
-
-    /**
-     * Get the TransactionDetail that owns the Product
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function TransactionDetail()
-    {
-        return $this->hasMany(TransactionDetail::class);
-    }
-
     /**
      * Get all of the banners for the Product
      *
@@ -50,5 +39,15 @@ class Product extends Model
     public function banners()
     {
         return $this->hasMany(Banner::class);
+    }
+
+    /**
+     * Get all of the transactions for the Product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
     }
 }

@@ -11,21 +11,21 @@ class Transaction extends Model
         'name',
         'email',
         'phone',
+        'product_id',
         'address',
         'promo_code_id',
         'sub_total',
-        'grand_total'
+        'grand_total',
+        'payment_status'
     ];
 
-    public function promo()
+    public function promoCode()
     {
         //1 transaksi memiliki 1 promo
         return $this->belongsTo(PromoCode::class);
     }
 
-    public function details()
-    {
-        //1 transaksi bisa memiliki banyak detail
-        return $this->hasMany(TransactionDetail::class);
+    public function product(){
+        return $this->belongsTo(Product::class);
     }
 }

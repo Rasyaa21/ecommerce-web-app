@@ -52,7 +52,7 @@
                     <p class="m-0 quickview-para">{!! $product->description !!}</p>
                     <div class="pro-details-quality">
                         <div class="pro-details-cart">
-                            <button class="add-cart btn btn-primary btn-hover-primary" href="#"> Buy Now</button>
+                            <a class="add-cart btn btn-primary btn-hover-primary" href="{{ route('transaction.information', $product->slug) }}"> Buy Now</a>
                         </div>
                     </div>
                 </div>

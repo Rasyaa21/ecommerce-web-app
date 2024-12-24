@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transaction_details', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('transaction_id');
-            $table->foreignId('product_id');
-            $table->integer('quantity');
-            $table->timestamps();
+        Schema::table('transactions', function (Blueprint $table) {
+            $table->enum('payment_status', ['unpaid', 'paid'])->default('unpaid');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transaction_details');
+        Schema::table('transactions', function (Blueprint $table) {
+            //
+        });
     }
 };
