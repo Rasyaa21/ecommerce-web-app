@@ -12,7 +12,7 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/products', [ProductController::class, 'index'])->name('product.index');
 route::get('/product/{slug}', [ProductController::class, 'show'])->name('product.show');
-route::get('transaction/{slug}',[TransactionController::class, 'information'])->name('transaction.information');
-
+route::get('transaction/information/{slug}',[TransactionController::class, 'information'])->name('transaction.information');
+Route::post('/transaction/save', [TransactionController::class, 'saveInformation'])->name('transaction.save');
 
 
