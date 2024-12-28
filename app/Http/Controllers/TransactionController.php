@@ -26,7 +26,26 @@ class TransactionController extends Controller
 
     public function saveInformation(Request $req){
         $data = $req->all();
-        $this->transactionRepository->createTransaction($req->all());
-        dd($data);
+
+        $transaction = $this->transactionRepository->createTransaction($req->all());
+
+        \Midtrans\Config::$serverKey = config('midtrans.serverKey');
+        \Midtrans\Config::$isProduction = config('midtrans.isProduction');
+        \Midtrans\Config::$isSanitized = config('midtrans.isSanitized');
+        \Midtrans\Config::$is3ds = config('midtrans.is3ds');
+
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => $transaction->code,
+                'gross_amount' => $transaction->grand_total
+            )
+        );
+
+        $paymentUrl = \Midtrans\Snap::createTransaction($params)->redirect_url;
+        return redirect($paymentUrl);
+    }
+
+    public function success(Request $req){
+        return view('pages.success');
     }
 }

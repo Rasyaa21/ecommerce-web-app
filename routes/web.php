@@ -14,5 +14,4 @@ Route::get('/products', [ProductController::class, 'index'])->name('product.inde
 route::get('/product/{slug}', [ProductController::class, 'show'])->name('product.show');
 route::get('transaction/information/{slug}',[TransactionController::class, 'information'])->name('transaction.information');
 Route::post('/transaction/save', [TransactionController::class, 'saveInformation'])->name('transaction.save');
-
-
+Route::get('/transaction/success', [TransactionController::class, 'success'])->name('transaction.success');
